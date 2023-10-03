@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Godot.NET.Sdk/4.1.1">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <RootNamespace>NewProjet</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="ShareVariable.cs" />
+    <Content Include="TestScript.cs" />
+    <Content Include="Texture.cs" />
+    <Content Include="New Projet.sln" />
+    <Content Include="scripting\CellMatrix\Matrix.cs" />
+    <Content Include="scripting\Cells\Cell.cs" />
+    <Content Include="scripting\Cells\MoveCell.cs" />
+    <Content Include="scripting\Matrix.cs" />
+    <Content Include="scripting\TextureGenerator.cs" />
+    <Content Include=".gitattributes" />
+    <Content Include=".gitignore" />
+  </ItemGroup>
+</Project>

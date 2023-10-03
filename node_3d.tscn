@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://c78vjjq7rocju"]
+
+[ext_resource type="Script" path="res://DublicateNode.cs" id="1_cgwlc"]
+[ext_resource type="Script" path="res://TestScript.cs" id="1_xr5k3"]
+[ext_resource type="Script" path="res://Texture.cs" id="2_3g582"]
+[ext_resource type="Script" path="res://ShareVariable.cs" id="3_lvt5l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eku81"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_sxb72"]
+
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("node")]
+script = ExtResource("1_cgwlc")
+node = NodePath("RigidBody2D")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Characters" type="Node" parent="."]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Characters"]
+position = Vector2(75, 250)
+script = ExtResource("1_xr5k3")
+metadata/ID = 10
+
+[node name="Polygon2D" type="Polygon2D" parent="Characters/CharacterBody2D"]
+texture_filter = 1
+texture_repeat = 1
+invert_border = 0.1
+polygon = PackedVector2Array(0, 0, 0, 50, 50, 50, 100, 50, 100, 0, 50, 0)
+uv = PackedVector2Array(0, 0, 0, 1, 1, 1, 2, 1, 2, 0, 1, 0)
+script = ExtResource("2_3g582")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Characters/CharacterBody2D"]
+visible = false
+polygon = PackedVector2Array(0, 0, 0, 50, 50, 50, 50, 0)
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="Characters"]
+position = Vector2(-453, 282)
+script = ExtResource("3_lvt5l")
+metadata/ID = 20
+
+[node name="Polygon2D" type="Polygon2D" parent="Characters/CharacterBody2D2"]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-95, -31)
+invert_border = 0.1
+polygon = PackedVector2Array(0, 0, 0, 50, 50, 50, 100, 50, 100, 0, 50, 0)
+uv = PackedVector2Array(0, 0, 0, 1, 1, 1, 2, 1, 2, 0, 1, 0)
+script = ExtResource("2_3g582")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Characters/CharacterBody2D2"]
+visible = false
+polygon = PackedVector2Array(0, 0, 0, 50, 50, 50, 50, 0)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(28, -21)
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("RectangleShape2D_eku81")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+scale = Vector2(20, 20)
+texture = SubResource("PlaceholderTexture2D_sxb72")
